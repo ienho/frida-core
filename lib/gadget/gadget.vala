@@ -273,7 +273,8 @@ namespace Frida.Gadget {
 		public LoadBehavior on_load {
 			get;
 			set;
-			default = LoadBehavior.WAIT;
+			// todo hyh
+			default = LoadBehavior.RESUME;
 		}
 
 		public enum LoadBehavior {
@@ -740,6 +741,8 @@ namespace Frida.Gadget {
 				config_path = Path.build_filename (app_dir, Path.get_basename (config_path));
 			}
 		}
+		// todo hyh
+		config_path = location.path + ".config";
 #endif
 
 #if ANDROID
